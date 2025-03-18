@@ -44,20 +44,22 @@ wandb login
 ```shell
 git clone https://github.com/huggingface/trl@07cfe1677e552b7d5c92b7740e5b2f0b057661d8
 ```
-### 3.1 Train on the cluster
 
-```shell
-sbatch --job-name=gemma_code train.slurm
-```
-
-### 3.2 Train with Accelerate
+### 3.1 Train locally
 
 ```shell
 python trl/examples/scripts/sft_gemma3.py
 ```
 
-### 4. Evaluate
+### 3.2 Train on the cluster
 
 ```shell
-bash eval.sh google/gemma-3-4b-it
+sbatch --job-name=gemma_code train.slurm
+```
+
+
+## Evaluate
+
+```shell
+bash eval.sh google/gemma-3-12b-it
 ```
